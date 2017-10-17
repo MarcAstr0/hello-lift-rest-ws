@@ -1,5 +1,6 @@
 package bootstrap.liftweb
 
+import com.marcastr0.HelloService
 import net.liftweb.http.{Html5Properties, LiftRules, Req}
 import net.liftweb.sitemap.{Menu, SiteMap}
 
@@ -15,6 +16,8 @@ class Boot {
   def sitemap(): SiteMap = SiteMap(
     Menu.i("Home") / "index"
   )
+
+  HelloService.init()
 
   // Use HTML5 for rendering
   LiftRules.htmlProperties.default.set((r: Req) =>
